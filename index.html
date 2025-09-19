@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiSense - Smart Farming with AI</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="landing-page">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#" onclick="goToHome()">
+                    <i class="fas fa-seedling me-2"></i>KrishiSense
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Smart Farming with AI</h1>
+                            <h2 class="hero-subtitle">KrishiSense</h2>
+                            <p class="hero-description">
+                                Revolutionize your farming with AI-powered crop prediction, weather monitoring, 
+                                and smart recommendations for optimal agricultural productivity.
+                            </p>
+                            <button class="btn btn-primary btn-xl get-started-btn py-4 px-5 fs-3 shadow-lg" style="font-weight: bold; border-radius: 2.5rem; box-shadow: 0 0.5rem 1.5rem rgba(0,123,255,0.25);" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fas fa-rocket me-3"></i>Get Started
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Smart Farming" class="img-fluid rounded-3 shadow-lg">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Crop Monitoring" class="img-fluid rounded-3 shadow-lg">
+                                    </div>
+                                    
+                                    <div class="carousel-item">
+                                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Farm Innovation" class="img-fluid rounded-3 shadow-lg">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="section-title">About KrishiSense</h2>
+                        <p class="section-description">
+                            KrishiSense leverages cutting-edge AI technology to provide farmers with intelligent 
+                            crop suggestions, weather predictions, and yield optimization strategies. Our platform 
+                            helps farmers make data-driven decisions for sustainable and profitable agriculture.
+                        </p>
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6">
+                                <div class="about-stat">
+                                    <div class="stat-number">95%</div>
+                                    <div class="stat-label">Accuracy in Crop Suggestions</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-stat">
+                                    <div class="stat-number">30%</div>
+                                    <div class="stat-label">Average Yield Increase</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="section-title">Key Features</h2>
+                        <p class="section-description">Discover how KrishiSense revolutionizes modern farming with AI-powered solutions</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <h4>Smart Weather Monitoring</h4>
+                            <p>Real-time weather tracking with 7-day forecasts, rainfall predictions, and temperature alerts to optimize your farming schedule.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4>AI Crop Suggestions</h4>
+                            <p>Get personalized crop recommendations based on your soil type, climate, and farm conditions for maximum yield potential.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Yield Optimization</h4>
+                            <p>Receive specific recommendations to improve crop yield, including irrigation, fertilization, and pest management strategies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>Mobile-Friendly</h4>
+                            <p>Access all features on any device - smartphone, tablet, or computer. Perfect for farmers on the go.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Data Analytics</h4>
+                            <p>Track your farm's performance with detailed analytics and insights to make informed decisions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Expert Support</h4>
+                            <p>Connect with agricultural experts and get personalized advice for your specific farming challenges.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">
+                        <i class="fas fa-seedling me-2"></i>Welcome to KrishiSense
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="login-options">
+                        <p class="text-center mb-4">Choose how you'd like to access the dashboard:</p>
+                        <div class="d-grid gap-3">
+                            <button class="btn btn-success btn-lg" onclick="loginAsGuest()">
+                                <i class="fas fa-user-friends me-2"></i>Login as Guest
+                            </button>
+                            <button class="btn btn-outline-primary btn-lg" onclick="showLoginForm()">
+                                <i class="fas fa-sign-in-alt me-2"></i>Login with Gmail
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="login-form" style="display: none;">
+                        <form id="gmail-login-form">
+                            <div class="mb-3">
+                                <label for="gmail-input" class="form-label">Gmail Address</label>
+                                <input type="email" class="form-control" id="gmail-input" placeholder="yourname@gmail.com" required>
+                                <div class="form-text">Please enter a valid Gmail address ending with @gmail.com</div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane me-2"></i>Send OTP
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="goBackToOptions()">
+                                    <i class="fas fa-arrow-left me-2"></i>Back
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div id="otp-form" style="display: none;">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-envelope-open-text text-primary" style="font-size: 2rem;"></i>
+                            <h6 class="mt-2">OTP Sent!</h6>
+                            <p class="text-muted">We've sent a 4-digit OTP to your Gmail address</p>
+                        </div>
+                        <form id="otp-verification-form">
+                            <div class="mb-3">
+                                <label for="otp-input" class="form-label">Enter OTP</label>
+                                <input type="text" class="form-control text-center" id="otp-input" placeholder="1234" maxlength="4" required>
+                                <div class="form-text">Enter the 4-digit OTP sent to your email</div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-check me-2"></i>Verify OTP
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="goBackToLogin()">
+                                    <i class="fas fa-arrow-left me-2"></i>Back to Login
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div id="profile-form" style="display: none;">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-user-check text-success" style="font-size: 2rem;"></i>
+                            <h6 class="mt-2">Welcome!</h6>
+                            <p class="text-muted">Let's personalize your experience</p>
+                        </div>
+                        <form id="profile-setup-form">
+                            <div class="mb-3">
+                                <label for="profile-name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="profile-name" placeholder="Enter your name" required>
+                                <div class="form-text">This will be used to personalize your dashboard</div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-rocket me-2"></i>Complete Setup
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="dashboard-page d-none">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h4 onclick="handleKrishiSenseClick()" style="cursor: pointer;"><i class="fas fa-seedling me-2"></i>KrishiSense</h4>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-section="home">
+                        <i class="fas fa-home me-2"></i>Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="weather">
+                        <i class="fas fa-cloud-sun me-2"></i>Weather
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="weather-intelligence">
+                        <i class="fas fa-cloud-rain me-2"></i>Weather Intelligence
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="crop-prediction">
+                        <i class="fas fa-seedling me-2"></i>Crop Suggestions
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="yield-optimization">
+                        <i class="fas fa-chart-bar me-2"></i>Yield Optimization
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="recommendations">
+                        <i class="fas fa-lightbulb me-2"></i>Recommendations
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="contact">
+                        <i class="fas fa-envelope me-2"></i>Contact
+                    </a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="nav-link text-danger" href="#" onclick="logout()">
+                        <i class="fas fa-sign-out-alt me-2"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Section -->
+            <section id="home-section" class="content-section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="welcome-card">
+                                <h1 class="welcome-title">Welcome to KrishiSense Dashboard</h1>
+                                <p class="welcome-description">
+                                    Your AI-powered farming companion is ready to help you make informed decisions 
+                                    for better crop yields and sustainable agriculture practices.
+                                </p>
+                                <div class="row g-4 mt-4">
+                                    <div class="col-md-4">
+                                        <div class="stats-card clickable-card" onclick="navigateToCropSuggestions()">
+                                            <div class="stats-icon">
+                                                <i class="fas fa-seedling"></i>
+                                            </div>
+                                            <h3>Smart Farming</h3>
+                                            <p>AI-driven insights for optimal crop management</p>
+                                            <div class="card-hover-text">Click to get crop suggestions</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="stats-card clickable-card" onclick="navigateToWeatherIntelligence()">
+                                            <div class="stats-icon">
+                                                <i class="fas fa-cloud-rain"></i>
+                                            </div>
+                                            <h3>Weather Intelligence</h3>
+                                            <p>Real-time weather monitoring and predictions</p>
+                                            <div class="card-hover-text">Click to get weather insights</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="stats-card clickable-card" onclick="navigateToYieldOptimization()">
+                                            <div class="stats-icon">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </div>
+                                            <h3>Yield Optimization</h3>
+                                            <p>Maximize your harvest with data-driven decisions</p>
+                                            <div class="card-hover-text">Click to optimize yield</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Section -->
+            <section id="weather-section" class="content-section d-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">Weather Monitoring</h2>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="weather-card">
+                                        <div class="weather-header">
+                                            <h4><i class="fas fa-map-marker-alt me-2"></i>Current Location</h4>
+                                            <p class="text-muted">Farm Field, Agricultural Zone</p>
+                                        </div>
+                                        <div class="weather-content">
+                                            <div class="weather-main">
+                                                <div class="temperature">
+                                                    <span class="temp-value">28</span>
+                                                    <span class="temp-unit">°C</span>
+                                                </div>
+                                                <div class="weather-icon">
+                                                    <i class="fas fa-sun"></i>
+                                                </div>
+                                            </div>
+                                            <div class="weather-details">
+                                                <div class="detail-item">
+                                                    <i class="fas fa-eye"></i>
+                                                    <span>Visibility: 10 km</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-wind"></i>
+                                                    <span>Wind: 12 km/h</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-tint"></i>
+                                                    <span>Humidity: 65%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="weather-card">
+                                        <div class="weather-header">
+                                            <h4><i class="fas fa-cloud-rain me-2"></i>Rain Forecast</h4>
+                                            <p class="text-muted">Next 24 hours</p>
+                                        </div>
+                                        <div class="weather-content">
+                                            <div class="rain-probability">
+                                                <div class="probability-circle">
+                                                    <span class="probability-value">40%</span>
+                                                </div>
+                                                <p class="probability-label">Chance of Rain</p>
+                                            </div>
+                                            <div class="forecast-timeline">
+                                                <div class="timeline-item">
+                                                    <span class="time">6 AM</span>
+                                                    <div class="weather-indicator">
+                                                        <i class="fas fa-cloud"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <span class="time">12 PM</span>
+                                                    <div class="weather-indicator">
+                                                        <i class="fas fa-cloud-rain"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <span class="time">6 PM</span>
+                                                    <div class="weather-indicator">
+                                                        <i class="fas fa-sun"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Intelligence Section -->
+            <section id="weather-intelligence-section" class="content-section d-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">Weather Intelligence</h2>
+                            <p class="section-description text-center mb-5">Get daily weather insights and crop protection recommendations</p>
+                            
+                            <!-- Crop Selection Prompt -->
+                            <div id="crop-selection-prompt" class="alert alert-info text-center mb-4">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <strong>First, select your crop to get personalized weather insights!</strong>
+                                <br>
+                                <button class="btn btn-primary mt-2" onclick="navigateToCropSuggestions()">
+                                    <i class="fas fa-seedling me-2"></i>Get Crop Suggestions
+                                </button>
+                            </div>
+
+                            <!-- Weather Intelligence Content (shown after crop selection) -->
+                            <div id="weather-intelligence-content" style="display: none;">
+                                <div class="row g-4">
+                                    <div class="col-lg-8">
+                                        <div class="weather-forecast-card">
+                                            <h4><i class="fas fa-calendar-week me-2"></i>7-Day Weather Forecast</h4>
+                                            <div id="weekly-forecast" class="weekly-forecast">
+                                                <!-- Weekly forecast will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="weather-alerts-card">
+                                            <h4><i class="fas fa-exclamation-triangle me-2"></i>Weather Alerts</h4>
+                                            <div id="weather-alerts" class="weather-alerts">
+                                                <!-- Weather alerts will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-4 mt-4">
+                                    <div class="col-12">
+                                        <div class="crop-protection-card">
+                                            <h4><i class="fas fa-shield-alt me-2"></i>Crop Protection Recommendations</h4>
+                                            <div id="crop-protection-tips" class="crop-protection-tips">
+                                                <!-- Crop protection tips will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Yield Optimization Section -->
+            <section id="yield-optimization-section" class="content-section d-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">Yield Optimization</h2>
+                            <p class="section-description text-center mb-5">Maximize your crop yield with AI-powered recommendations</p>
+                            
+                            <!-- Crop Selection Prompt -->
+                            <div id="yield-crop-selection-prompt" class="alert alert-info text-center mb-4">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <strong>First, select your crop to get personalized yield optimization tips!</strong>
+                                <br>
+                                <button class="btn btn-primary mt-2" onclick="navigateToCropSuggestions()">
+                                    <i class="fas fa-seedling me-2"></i>Get Crop Suggestions
+                                </button>
+                            </div>
+
+                            <!-- Yield Optimization Content (shown after crop selection) -->
+                            <div id="yield-optimization-content" style="display: none;">
+                                <!-- Crop Tabs -->
+                                <div class="crop-tabs-container mb-4">
+                                    <ul class="nav nav-tabs crop-tabs" id="cropTabs" role="tablist">
+                                        <!-- Crop tabs will be populated by JavaScript -->
+                                    </ul>
+                                </div>
+                                
+                                <!-- Tab Content -->
+                                <div class="tab-content" id="cropTabContent">
+                                    <!-- Tab content will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crop Suggestion Section -->
+            <section id="crop-prediction-section" class="content-section d-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">Smart Crop Suggestions</h2>
+                            <p class="section-description text-center mb-5">Get AI-powered crop recommendations and yield improvement tips for your farm</p>
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="suggestion-form-card">
+                                        <h4><i class="fas fa-lightbulb me-2"></i>Farm Information</h4>
+                                        <form id="crop-suggestion-form">
+                                            <div class="mb-3">
+                                                <label for="state" class="form-label">State</label>
+                                                <select class="form-select" id="state" required onchange="updateDistricts()">
+                                                    <option value="">Select State/Union Territory</option>
+                                                    <option value="andhra_pradesh">Andhra Pradesh</option>
+                                                    <option value="arunachal_pradesh">Arunachal Pradesh</option>
+                                                    <option value="assam">Assam</option>
+                                                    <option value="bihar">Bihar</option>
+                                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                                    <option value="goa">Goa</option>
+                                                    <option value="gujarat">Gujarat</option>
+                                                    <option value="haryana">Haryana</option>
+                                                    <option value="himachal_pradesh">Himachal Pradesh</option>
+                                                    <option value="jharkhand">Jharkhand</option>
+                                                    <option value="karnataka">Karnataka</option>
+                                                    <option value="kerala">Kerala</option>
+                                                    <option value="madhya_pradesh">Madhya Pradesh</option>
+                                                    <option value="maharashtra">Maharashtra</option>
+                                                    <option value="manipur">Manipur</option>
+                                                    <option value="meghalaya">Meghalaya</option>
+                                                    <option value="mizoram">Mizoram</option>
+                                                    <option value="nagaland">Nagaland</option>
+                                                    <option value="odisha">Odisha</option>
+                                                    <option value="punjab">Punjab</option>
+                                                    <option value="rajasthan">Rajasthan</option>
+                                                    <option value="sikkim">Sikkim</option>
+                                                    <option value="tamil_nadu">Tamil Nadu</option>
+                                                    <option value="telangana">Telangana</option>
+                                                    <option value="tripura">Tripura</option>
+                                                    <option value="uttar_pradesh">Uttar Pradesh</option>
+                                                    <option value="uttarakhand">Uttarakhand</option>
+                                                    <option value="west_bengal">West Bengal</option>
+                                                    <option value="andaman_nicobar">Andaman and Nicobar Islands</option>
+                                                    <option value="chandigarh">Chandigarh</option>
+                                                    <option value="dadra_nagar_haveli">Dadra and Nagar Haveli</option>
+                                                    <option value="daman_diu">Daman and Diu</option>
+                                                    <option value="delhi">Delhi</option>
+                                                    <option value="jammu_kashmir">Jammu and Kashmir</option>
+                                                    <option value="ladakh">Ladakh</option>
+                                                    <option value="lakshadweep">Lakshadweep</option>
+                                                    <option value="puducherry">Puducherry</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="district" class="form-label">District</label>
+                                                <select class="form-select" id="district" required>
+                                                    <option value="">Select District</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="planting-date" class="form-label">Planned Planting Date</label>
+                                                <input type="date" class="form-control" id="planting-date" required>
+                                                <div class="form-text">We'll automatically detect the season based on this date</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="crop-name" class="form-label">Current Crop (Optional)</label>
+                                                <select class="form-select" id="crop-name">
+                                                    <option value="">Select your current crop (optional)</option>
+                                                    <option value="wheat">Wheat</option>
+                                                    <option value="rice">Rice</option>
+                                                    <option value="corn">Maize (Corn)</option>
+                                                    <option value="sugarcane">Sugarcane</option>
+                                                    <option value="cotton">Cotton</option>
+                                                    <option value="tomato">Tomato</option>
+                                                    <option value="potato">Potato</option>
+                                                    <option value="onion">Onion</option>
+                                                    <option value="soybean">Soybean</option>
+                                                    <option value="groundnut">Groundnut (Peanut)</option>
+                                                    <option value="chickpea">Chickpea (Gram)</option>
+                                                    <option value="mustard">Mustard</option>
+                                                    <option value="makhana">Makhana (Fox Nut)</option>
+                                                    <option value="litchi">Litchi</option>
+                                                    <option value="mango">Mango</option>
+                                                </select>
+                                                <div class="form-text">Leave empty to get general crop suggestions</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="soil-type" class="form-label">Soil Type</label>
+                                                <select class="form-select" id="soil-type" required>
+                                                    <option value="">Select Soil Type</option>
+                                                    <option value="clay">Clay Soil (Heavy, retains water)</option>
+                                                    <option value="sandy">Sandy Soil (Light, drains quickly)</option>
+                                                    <option value="loamy">Loamy Soil (Ideal, balanced)</option>
+                                                    <option value="silty">Silty Soil (Fine particles, fertile)</option>
+                                                    <option value="black">Black Soil (Volcanic, high fertility)</option>
+                                                    <option value="red">Red Soil (Iron-rich, well-drained)</option>
+                                                    <option value="alluvial">Alluvial Soil (River deposits, fertile)</option>
+                                                    <option value="laterite">Laterite Soil (Tropical, iron-rich)</option>
+                                                    <option value="peaty">Peaty Soil (Organic, acidic)</option>
+                                                    <option value="chalky">Chalky Soil (Alkaline, free-draining)</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="rainfall" class="form-label">Annual Rainfall (mm)</label>
+                                                <input type="number" class="form-control" id="rainfall" placeholder="e.g., 1200" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="temperature" class="form-label">Average Temperature (°C)</label>
+                                                <input type="number" class="form-control" id="temperature" placeholder="e.g., 25" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="area" class="form-label">Field Area (hectares)</label>
+                                                <input type="number" class="form-control" id="area" step="0.1" placeholder="e.g., 2.5" required>
+                                                <div class="form-text">Enter area in hectares (1 hectare = 2.47 acres)</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="alert alert-info">
+                                                    <i class="fas fa-info-circle me-2"></i>
+                                                    <strong>Season Detection:</strong> We'll automatically detect the planting season based on your selected date.
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary w-100">
+                                                <i class="fas fa-magic me-2"></i>Get Smart Suggestions
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="suggestion-result-card">
+                                        <h4><i class="fas fa-seedling me-2"></i>AI Recommendations</h4>
+                                        <div id="suggestion-result" class="suggestion-result">
+                                            <div class="result-placeholder">
+                                                <i class="fas fa-robot"></i>
+                                                <h5>Ready to Help!</h5>
+                                                <p>Fill in your farm details and click "Get Smart Suggestions" to receive personalized crop recommendations and yield improvement tips.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations Section -->
+            <section id="recommendations-section" class="content-section d-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">AI Recommendations</h2>
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="recommendation-card">
+                                        <div class="recommendation-icon">
+                                            <i class="fas fa-tint"></i>
+                                        </div>
+                                        <h5>Irrigation Management</h5>
+                                        <p>Use drip irrigation system to optimize water usage and reduce wastage by 30%.</p>
+                                        <div class="recommendation-priority high">High Priority</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="recommendation-card">
+                                        <div class="recommendation-icon">
+                                            <i class="fas fa-leaf"></i>
+                                        </div>
+                                        <h5>Fertilizer Application</h5>
+                                        <p>Apply organic fertilizer in the next 2 weeks for better soil health and crop growth.</p>
+                                        <div class="recommendation-priority medium">Medium Priority</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="recommendation-card">
+                                        <div class="recommendation-icon">
+                                            <i class="fas fa-bug"></i>
+                                        </div>
+                                        <h5>Pest Control</h5>
+                                        <p>Monitor for aphids and apply neem oil spray as preventive measure.</p>
+                                        <div class="recommendation-priority low">Low Priority</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="recommendation-card">
+                                        <div class="recommendation-icon">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </div>
+                                        <h5>Planting Schedule</h5>
+                                        <p>Optimal planting window is between March 15-25 based on weather forecast.</p>
+                                        <div class="recommendation-priority high">High Priority</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="recommendation-card">
+                                        <div class="recommendation-icon">
+                                            <i class="fas fa-seedling"></i>
+                                        </div>
+                                        <h5>Crop Rotation</h5>
+                                        <p>Consider rotating with legumes next season to improve soil nitrogen content.</p>
+                                        <div class="recommendation-priority medium">Medium Priority</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="recommendation-card">
+                                        <div class="recommendation-icon">
+                                            <i class="fas fa-thermometer-half"></i>
+                                        </div>
+                                        <h5>Temperature Control</h5>
+                                        <p>Use shade nets during peak summer to protect crops from heat stress.</p>
+                                        <div class="recommendation-priority low">Low Priority</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact-section" class="content-section d-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">Contact Us</h2>
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <div class="contact-form-card">
+                                        <h4><i class="fas fa-envelope me-2"></i>Send us a Message</h4>
+                                        <form id="contact-form">
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label for="contact-name" class="form-label">Name</label>
+                                                    <input type="text" class="form-control" id="contact-name" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="contact-email" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" id="contact-email" required>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="contact-message" class="form-label">Message</label>
+                                                    <textarea class="form-control" id="contact-message" rows="5" required></textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="contact-info-card">
+                                        <h4><i class="fas fa-info-circle me-2"></i>Get in Touch</h4>
+                                        <div class="contact-info">
+                                            <div class="info-item">
+                                                <i class="fas fa-envelope"></i>
+                                                <div>
+                                                    <strong>Email</strong>
+                                                    <p>support@krishisense.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="info-item">
+                                                <i class="fas fa-phone"></i>
+                                                <div>
+                                                    <strong>Phone</strong>
+                                                    <p>+91 98765 43210</p>
+                                                </div>
+                                            </div>
+                                            <div class="info-item">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <div>
+                                                    <strong>Address</strong>
+                                                    <p>Agricultural Technology Center<br>New Delhi, India</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
